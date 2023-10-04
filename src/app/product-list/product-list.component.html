@@ -1,8 +1,48 @@
+
 <h2>Products</h2>
+<!-- product es la vairable de iteración, utilizada en la línea 29 -->
+<div *ngFor="let product of products">
+    <h3>
+      <!--tool tip al colocar el puntero encima muestra los detalles -->
+       <a [title]="product.name +'detalles'" 
+         [routerLink]="['/products', product.id]"> 
+            {{ product.name}}<!-- interpolación -->
+       </a> 
+    </h3>
 
+    <p>
+      Precio:{{ product.price|currency }}
+  </p> 
+    
+    <!-- directiva condicional, si no hay descripción del producto
+    no lo muestra, valida si la cadena está vacia, cambia en tiempo de ejecución -->
+    <p *ngIf="product.description">
+      Description:{{ product.description}}
+    </p> 
+    
+    <!-- <img [src]="product.photo" [alt]="product.name"/>  -->
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+    <button type="button"(click)="share(product.name)">
+        Compartir
+    </button>
+    <br>
+    <button type="button" >
+      Detalle
+  </button>
+    
+
+    
+    
+    <!-- este es el componente, recibe parámetros entre padre e hijo-->
+    <!-- los corchetes capturan los datos, los parentesis devuelven la información -->
+     <!-- extrae del componente [product] que aparece en la línea 13 del product-alerts.component.ts-->
+     <!-- app-product-alerts aparece en el product-list.component.ts en el selector -->
+     <!-- product sin corchetes es la variable de iteración del div en la línea 3 -->
+     <!-- (notify)es la variable
+    "onNotify() método creado en product-list.component.ts que es el padre, es lo que los
+    conecta-->
+    <app-product-alerts
+    [product]="product"  
+    (notify)="onNotify()">
+    </app-product-alerts>  
+</div>

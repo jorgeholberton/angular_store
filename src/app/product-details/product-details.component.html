@@ -1,0 +1,18 @@
+<p *ngIf="product"> 
+ <!--  @Output() notify = new EventEmitter(); --> <!-- que aparece en product-alerts.component.ts -->
+ <!-- <button type="button" (click)="opDia.emit()">Detalles</button> -->
+ 
+ <img [src]="product.photo" [alt]=" product.name " /> 
+ <br>
+ Nombre: {{product.name}},
+ <br>
+ Descripción: {{product.description}},
+ <br>
+ Precio: {{product.price | currency}}
+</p> 
+
+
+
+
+
+

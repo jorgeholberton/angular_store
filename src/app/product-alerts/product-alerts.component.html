@@ -1,0 +1,5 @@
+<!-- product valida que el producto exista -->
+<p *ngIf="product && product.price >700">
+    <!-- @Output() notify = new EventEmitter(); que aparece en product-alerts.component.ts -->
+    <button type="button" (click)="notify.emit()">Notificame</button>  
+</p>
