@@ -1,4 +1,19 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px; /* Espacio entre las tarjetas */
+}
 
+.product-card {
+  flex-basis: calc(33.33% - 20px); /* Ajusta el tamaño de las tarjetas para tres columnas en una fila */
+  max-width: calc(33.33% - 20px); /* Ajusta el tamaño máximo de las tarjetas */
+}
+
+.product-image {
+  max-width: 100%; /* Ajusta el tamaño máximo de las imágenes dentro de las tarjetas */
+}
+  
 
 /*
 Copyright Google LLC. All Rights Reserved.

@@ -26,7 +26,7 @@ export const products = [
     name: 'Pixel 4a',
     price: 500,
     description: '',
-    photo:'asset/images/pixel_4a.jpg'
+    photo:'assets/images/pixel_4a.jpg'
   },
   {
     id: 4,
